@@ -81,18 +81,18 @@ export const Articles = () => {
       <Header />
       <section className={styles.section}>
         <Container>
-          <Heading level={1} className={styles.title}>
+          <Heading level={1} className={styles.title} data-aos="fade-up">
             {t('articles.title')}
           </Heading>
         
         {articles.length === 0 ? (
-          <Text className={styles.empty}>
+          <Text className={styles.empty} data-aos="fade-up" data-aos-delay="100">
             {t('articles.empty')}
           </Text>
         ) : (
           <div className={styles.grid}>
-            {articles.map((article) => (
-              <article key={article.id} className={styles.card}>
+            {articles.map((article, index) => (
+              <article key={article.id} className={styles.card} data-aos="fade-up" data-aos-delay={100 + (index * 50)}>
                 {article.featured_image_url && (
                   <div className={styles.imageContainer}>
                     <img

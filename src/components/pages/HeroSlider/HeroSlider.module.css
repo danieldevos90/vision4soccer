@@ -47,11 +47,13 @@
 }
 
 .content {
-  position: relative;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
   padding: 0 var(--container-padding);
   text-align: center;
 }
@@ -200,6 +202,10 @@
   .heroSlider {
     height: 80vh;
     min-height: 500px;
+  }
+
+  .content {
+    bottom: 20%;
   }
 
   .subtitle {

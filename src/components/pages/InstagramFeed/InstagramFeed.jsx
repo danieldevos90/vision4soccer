@@ -51,10 +51,10 @@ export const InstagramFeed = ({ posts = [] }) => {
   const postsToUse = transformedPosts.slice(0, 9);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-aos="fade-up">
       <Container>
         <div className={styles.content}>
-          <div className={styles.header}>
+          <div className={styles.header} data-aos="fade-up" data-aos-delay="100">
             <Heading level={3} className={styles.title}>
               {t('instagram.title')}
             </Heading>
@@ -64,13 +64,15 @@ export const InstagramFeed = ({ posts = [] }) => {
           </div>
 
           <div className={styles.feed}>
-            {postsToUse.map((post) => (
+            {postsToUse.map((post, index) => (
               <a
                 key={post.id}
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.post}
+                data-aos="zoom-in"
+                data-aos-delay={200 + (index * 50)}
               >
                 <img
                   src={post.image}
@@ -82,7 +84,7 @@ export const InstagramFeed = ({ posts = [] }) => {
             ))}
           </div>
 
-          <div className={styles.footer}>
+          <div className={styles.footer} data-aos="fade-up" data-aos-delay="600">
             <a
               href="https://www.instagram.com/vision4soccer/"
               target="_blank"

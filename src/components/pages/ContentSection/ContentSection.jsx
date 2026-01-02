@@ -23,26 +23,27 @@ export const ContentSection = ({
     <section
       className={`${styles.section} ${className}`}
       style={{ backgroundColor }}
+      data-aos="fade-up"
     >
       <Container>
         <div className={styles.content}>
           {heading && (
-            <Heading level={3} variant={textColor} className={styles.heading}>
+            <Heading level={3} variant={textColor} className={styles.heading} data-aos="fade-up" data-aos-delay="100">
               {heading}
             </Heading>
           )}
           {subheading && (
-            <Heading level={3} variant={textColor} className={styles.subheading}>
+            <Heading level={3} variant={textColor} className={styles.subheading} data-aos="fade-up" data-aos-delay="200">
               {subheading}
             </Heading>
           )}
           {text && (
-            <Text variant={textColor === 'light' ? 'light' : 'body'} className={styles.text}>
+            <Text variant={textColor === 'light' ? 'light' : 'body'} className={styles.text} data-aos="fade-up" data-aos-delay="300">
               {text}
             </Text>
           )}
           {buttonText && buttonHref && (
-            <div className={styles.buttonContainer}>
+            <div className={styles.buttonContainer} data-aos="fade-up" data-aos-delay="400">
               <Button href={buttonHref} variant="primary">
                 {buttonText}
               </Button>

@@ -12,21 +12,21 @@ export const PersonProfile = ({ name, bio, career, image }) => {
     <article className={styles.personProfile}>
       <div className={styles.profileCard}>
         {image && (
-          <div className={styles.imageContainer}>
+          <div className={styles.imageContainer} data-aos="zoom-in">
             <img src={image} alt={name} className={styles.image} />
           </div>
         )}
         <div className={styles.textContent}>
-          <Heading level={2} className={styles.name}>
+          <Heading level={2} className={styles.name} data-aos="fade-up" data-aos-delay="100">
             {name}
           </Heading>
           {bio && (
-            <Text className={styles.bio}>
+            <Text className={styles.bio} data-aos="fade-up" data-aos-delay="200">
               {bio}
             </Text>
           )}
           {career && career.length > 0 && (
-            <div className={styles.career}>
+            <div className={styles.career} data-aos="fade-up" data-aos-delay="300">
               {career.map((item, index) => (
                 <div key={index} className={styles.careerItem}>
                   <span className={styles.careerIcon}>⚽</span>

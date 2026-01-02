@@ -31,7 +31,7 @@ export const HeroSlider = ({ slides = [] }) => {
       fit: 'cover',
     },
     {
-      image: '/homepage_images/ThijsDallinga.jpg',
+      image: '/homepage_images/ThijsDallinga.png',
       copyright: 'ProShots/ZumaPress',
       position: 'center 30%',
       fit: 'cover',
@@ -45,7 +45,7 @@ export const HeroSlider = ({ slides = [] }) => {
     {
       image: '/homepage_images/TygoLand.jpg',
       copyright: 'ProShots/ZumaPress',
-      position: 'center 30%',
+      position: 'center 40%',
       fit: 'cover',
     },
     {
@@ -63,7 +63,7 @@ export const HeroSlider = ({ slides = [] }) => {
     {
       image: '/homepage_images/ThijmenBlokzijl.JPG',
       copyright: 'ProShots/NielsBoersema',
-      position: 'center 30%',
+      position: 'center 40%',
       fit: 'cover',
     },
     {
@@ -75,6 +75,12 @@ export const HeroSlider = ({ slides = [] }) => {
     {
       image: '/homepage_images/ThomvanBergen.jpg',
       copyright: 'ProShots/JulesIperen',
+      position: 'center 30%',
+      fit: 'cover',
+    },
+    {
+      image: '/homepage_images/FrederikJensen.jpg',
+      copyright: 'ProShots/ZumaPress',
       position: 'center 30%',
       fit: 'cover',
     },
@@ -161,7 +167,7 @@ export const HeroSlider = ({ slides = [] }) => {
         </div>
       ))}
       
-      <div className={styles.scrollDown}>
+      <div className={styles.scrollDown} data-aos="fade-in" data-aos-delay="1000">
         <svg
           width="24"
           height="24"

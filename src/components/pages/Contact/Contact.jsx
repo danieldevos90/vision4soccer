@@ -50,10 +50,10 @@ export const Contact = () => {
           backgroundColor="#FFFFFF"
         />
 
-        <section className={styles.contactInfo}>
+        <section className={styles.contactInfo} data-aos="fade-up">
           <Container>
             <div className={styles.contactGrid}>
-              <div className={styles.contactItem}>
+              <div className={styles.contactItem} data-aos="fade-up" data-aos-delay="100">
                 <Heading level={3}>{t('contact.address.title')}</Heading>
                 <Text>{t('contact.address.line1')}</Text>
                 <Text>{t('contact.address.line2')}</Text>
@@ -71,13 +71,13 @@ export const Contact = () => {
             {(() => {
               const people = t('contact.people');
               return Array.isArray(people) && people.length > 0 ? (
-                <div className={styles.peopleSection}>
+                <div className={styles.peopleSection} data-aos="fade-up" data-aos-delay="200">
                   <Heading level={2} className={styles.peopleHeading}>
                     {t('contact.heading')}
                   </Heading>
                   <div className={styles.peopleGrid}>
                     {people.map((person, index) => (
-                      <div key={index} className={styles.personCard}>
+                      <div key={index} className={styles.personCard} data-aos="zoom-in" data-aos-delay={300 + (index * 100)}>
                         <Heading level={3} className={styles.personName}>
                           {person.name}
                         </Heading>

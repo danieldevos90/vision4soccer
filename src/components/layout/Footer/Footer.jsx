@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../../ui/Button/Button';
 import { Heading } from '../../ui/Heading/Heading';
 import { Text } from '../../ui/Text/Text';
 import { useI18n } from '../../../i18n/i18n';
@@ -81,14 +80,39 @@ export const Footer = () => {
             <Heading level={5} variant="light" className={styles.footerHeading}>
               {t('footer.contact')}
             </Heading>
-            <Button
-              href={getRoute('contact')}
-              variant="primary"
-              size="sm"
-              className={styles.contactButton}
-            >
-              {t('footer.contactButton')}
-            </Button>
+            <Text variant="light" className={styles.footerText}>
+              <a href={`mailto:${t('contact.email.address')}`} className={styles.footerLink}>
+                {t('contact.email.address')}
+              </a>
+            </Text>
+            {(() => {
+              const people = t('contact.people');
+              return Array.isArray(people) && people.length > 0 ? (
+                <div className={styles.peopleList}>
+                  {people.map((person, index) => (
+                    <div key={index} className={styles.personItem}>
+                      <Text variant="light" size="sm" className={styles.personName}>
+                        {person.name}
+                      </Text>
+                      {person.phone && (
+                        <Text variant="light" size="sm" className={styles.personContact}>
+                          <a href={`tel:${person.phone.replace(/\s/g, '')}`} className={styles.footerLink}>
+                            {person.phone}
+                          </a>
+                        </Text>
+                      )}
+                      {person.email && (
+                        <Text variant="light" size="sm" className={styles.personContact}>
+                          <a href={`mailto:${person.email}`} className={styles.footerLink}>
+                            {person.email}
+                          </a>
+                        </Text>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : null;
+            })()}
           </div>
         </div>
       </div>

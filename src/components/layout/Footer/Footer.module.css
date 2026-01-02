@@ -53,6 +53,28 @@
   margin-top: var(--spacing-sm);
 }
 
+.peopleList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.personItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.personName {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.personContact {
+  margin: 0;
+}
+
 .footerBottom {
   background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-dark));
   padding: var(--spacing-lg) var(--container-padding);

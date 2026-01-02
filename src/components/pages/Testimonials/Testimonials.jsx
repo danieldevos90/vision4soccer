@@ -28,7 +28,7 @@ export const Testimonials = ({ testimonials = [] }) => {
   if (testimonialsToUse.length === 0) return null;
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-aos="fade-in">
       <div className={styles.backgroundWrapper}>
         <div className={styles.backgroundImage} />
         <div className={styles.overlay} />
@@ -42,7 +42,7 @@ export const Testimonials = ({ testimonials = [] }) => {
                 index === currentIndex ? styles.active : ''
               }`}
             >
-              <blockquote className={styles.quote}>
+              <blockquote className={styles.quote} data-aos="zoom-in" data-aos-delay="200">
                 <p className={styles.quoteText}>{testimonial.quote}</p>
                 <footer className={styles.author}>
                   <cite>{testimonial.author}</cite>
@@ -51,7 +51,7 @@ export const Testimonials = ({ testimonials = [] }) => {
             </div>
           ))}
         </div>
-        <div className={styles.dots}>
+        <div className={styles.dots} data-aos="fade-up" data-aos-delay="400">
           {testimonialsToUse.map((_, index) => (
             <button
               key={index}

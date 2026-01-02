@@ -1,42 +1,115 @@
 .languageSwitcher {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+}
+
+.switchTrack {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 2px;
+  gap: 0;
+  backdrop-filter: blur(8px);
+}
+
+.switchIndicator {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(50% - 2px);
+  height: calc(100% - 4px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  transform: translateX(calc(var(--active-index) * 100%));
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 0;
 }
 
 .flagButton {
-  background: none;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  padding: 0.25rem;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  min-width: 44px;
+  min-height: 32px;
 }
 
 .flagButton:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.flagButton:active {
+  transform: scale(0.95);
 }
 
 .flagButton.active {
-  border-color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.1);
+  /* Active state is handled by switchIndicator */
+}
+
+.flagButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
 }
 
 .flag {
   width: 24px;
   height: 18px;
   display: block;
-  border-radius: 2px;
+  border-radius: 3px;
   object-fit: cover;
+  transition: opacity 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.flagButton:not(.active) .flag {
+  opacity: 0.7;
+}
+
+.flagButton.active .flag {
+  opacity: 1;
+}
+
+/* Dark mode / mobile menu styles */
+:global(.nav.open) .switchTrack {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+:global(.nav.open) .switchIndicator {
+  background: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(51, 162, 123, 0.3);
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
   .flag {
     width: 20px;
+    height: 15px;
+  }
+  
+  .flagButton {
+    padding: 5px 8px;
+    min-width: 40px;
+    min-height: 28px;
+  }
+  
+  .switchTrack {
+    padding: 2px;
+  }
+  
+  .switchIndicator {
+    height: calc(100% - 4px);
   }
 }

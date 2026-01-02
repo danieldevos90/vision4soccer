@@ -21,17 +21,18 @@ export const Hero = ({
         backgroundImage: backgroundImage ? `url("${backgroundImage}")` : undefined,
         backgroundPosition,
       }}
+      data-aos="fade-in"
     >
       <div className={styles.overlay} />
       <Container>
         <div className={styles.content}>
           {title && (
-            <Heading level={1} className={styles.title} variant="light">
+            <Heading level={1} className={styles.title} variant="light" data-aos="fade-up">
               {title}
             </Heading>
           )}
           {subtitle && (
-            <Text variant="light" className={styles.subtitle}>
+            <Text variant="light" className={styles.subtitle} data-aos="fade-up" data-aos-delay="200">
               {subtitle}
             </Text>
           )}
