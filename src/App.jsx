@@ -38,20 +38,26 @@ function AOSHandler() {
  */
 function App() {
   return (
-    <I18nProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <I18nProvider>
         <AOSHandler />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profiel" element={<Profile />} />
           <Route path="/profiel/" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/profile/" element={<Profile />} />
+          <Route path="/jeugd" element={<Youth />} />
           <Route path="/jeugd/" element={<Youth />} />
+          <Route path="/youth" element={<Youth />} />
           <Route path="/youth/" element={<Youth />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/contact/" element={<Contact />} />
+          <Route path="/articles" element={<Articles />} />
           <Route path="/articles/" element={<Articles />} />
         </Routes>
-      </BrowserRouter>
-    </I18nProvider>
+      </I18nProvider>
+    </BrowserRouter>
   );
 }
 

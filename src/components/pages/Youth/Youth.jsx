@@ -47,6 +47,8 @@ export const Youth = () => {
           heading={t('youth.heading')}
           text={t('youth.text')}
           backgroundColor="#FFFFFF"
+          image="/IMG_1011.jpeg"
+          imageAlt={t('youth.title')}
         />
 
         {Array.isArray(t('youth.sections')) && t('youth.sections').map((section, index) => (

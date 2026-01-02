@@ -2,7 +2,11 @@
  * Sitemap XML Generator
  * Generates sitemap.xml dynamically with all pages
  */
-import { sql } from '@vercel/postgres';
+
+// Check if database connection is available
+const isDatabaseAvailable = () => {
+  return !!process.env.POSTGRES_URL;
+};
 
 // Routes configuration
 const routes = [
@@ -80,15 +84,18 @@ export default async function handler(req, res) {
   });
 
   // Add published articles from database
-  try {
-    const articlesResult = await sql.query(
-      'SELECT slug, language, updated_at, published_at FROM articles WHERE published = true ORDER BY published_at DESC'
-    );
-    
-    if (articlesResult.rows && articlesResult.rows.length > 0) {
-      articlesResult.rows.forEach(article => {
-        const lastmod = article.updated_at || article.published_at || currentDate;
-        xml += `
+  if (isDatabaseAvailable()) {
+    try {
+      // Dynamically import to avoid initialization errors if connection string is missing
+      const { sql } = await import('@vercel/postgres');
+      const articlesResult = await sql.query(
+        'SELECT slug, language, updated_at, published_at FROM articles WHERE published = true ORDER BY published_at DESC'
+      );
+      
+      if (articlesResult.rows && articlesResult.rows.length > 0) {
+        articlesResult.rows.forEach(article => {
+          const lastmod = article.updated_at || article.published_at || currentDate;
+          xml += `
   <url>
     <loc>${baseUrl}/articles/${article.slug}</loc>
     <lastmod>${new Date(lastmod).toISOString()}</lastmod>
@@ -96,12 +103,13 @@ export default async function handler(req, res) {
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="${article.language || 'nl'}" href="${baseUrl}/articles/${article.slug}" />
   </url>`;
-      });
+        });
+      }
+    } catch (error) {
+      // If database is not available or query fails, continue without articles
+      // This allows the sitemap to work even if the database is not set up yet
+      console.error('Error fetching articles for sitemap:', error.message);
     }
-  } catch (error) {
-    // If database is not available or query fails, continue without articles
-    // This allows the sitemap to work even if the database is not set up yet
-    console.error('Error fetching articles for sitemap:', error.message);
   }
 
   xml += `

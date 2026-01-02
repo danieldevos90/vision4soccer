@@ -6,6 +6,7 @@ import { Heading } from '../../ui/Heading/Heading';
 import { Text } from '../../ui/Text/Text';
 import { ContentSection } from '../ContentSection/ContentSection';
 import { Hero } from '../Hero/Hero';
+import { Map } from './Map';
 import { useI18n } from '../../../i18n/i18n';
 import { SEO, OrganizationSchema, BreadcrumbSchema } from '../../seo';
 import { getContactSEO, getOrganizationSchema } from '../../../utils/seoConfig';
@@ -65,6 +66,9 @@ export const Contact = () => {
                     </a>
                   </Text>
                 </div>
+              </div>
+              <div className={styles.mapWrapper} data-aos="fade-up" data-aos-delay="200">
+                <Map />
               </div>
             </div>
             

@@ -17,13 +17,17 @@
 
 .contactGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-top: 40px;
+  align-items: center;
 }
 
 .contactItem {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contactItem h3 {
@@ -74,6 +78,7 @@
 .personName {
   margin-bottom: 20px;
   color: #1a1a1a;
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .personContact {
@@ -89,6 +94,10 @@
 .personContact a:hover {
   color: #666;
   text-decoration: underline;
+}
+
+.mapWrapper {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

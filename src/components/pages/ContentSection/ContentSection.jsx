@@ -8,6 +8,7 @@ import styles from './ContentSection.module.css';
 /**
  * ContentSection Component
  * Standard content section with heading, text, and optional button
+ * Supports optional image in a column layout
  */
 export const ContentSection = ({
   heading,
@@ -18,6 +19,8 @@ export const ContentSection = ({
   backgroundColor,
   textColor = 'dark',
   className = '',
+  image,
+  imageAlt = '',
 }) => {
   return (
     <section
@@ -26,27 +29,34 @@ export const ContentSection = ({
       data-aos="fade-up"
     >
       <Container>
-        <div className={styles.content}>
-          {heading && (
-            <Heading level={3} variant={textColor} className={styles.heading} data-aos="fade-up" data-aos-delay="100">
-              {heading}
-            </Heading>
-          )}
-          {subheading && (
-            <Heading level={3} variant={textColor} className={styles.subheading} data-aos="fade-up" data-aos-delay="200">
-              {subheading}
-            </Heading>
-          )}
-          {text && (
-            <Text variant={textColor === 'light' ? 'light' : 'body'} className={styles.text} data-aos="fade-up" data-aos-delay="300">
-              {text}
-            </Text>
-          )}
-          {buttonText && buttonHref && (
-            <div className={styles.buttonContainer} data-aos="fade-up" data-aos-delay="400">
-              <Button href={buttonHref} variant="primary">
-                {buttonText}
-              </Button>
+        <div className={`${styles.content} ${image ? styles.contentWithImage : ''}`}>
+          <div className={styles.textColumn}>
+            {heading && (
+              <Heading level={3} variant={textColor} className={styles.heading} data-aos="fade-up" data-aos-delay="100">
+                {heading}
+              </Heading>
+            )}
+            {subheading && (
+              <Heading level={3} variant={textColor} className={styles.subheading} data-aos="fade-up" data-aos-delay="200">
+                {subheading}
+              </Heading>
+            )}
+            {text && (
+              <Text variant={textColor === 'light' ? 'light' : 'body'} className={styles.text} data-aos="fade-up" data-aos-delay="300">
+                {text}
+              </Text>
+            )}
+            {buttonText && buttonHref && (
+              <div className={styles.buttonContainer} data-aos="fade-up" data-aos-delay="400">
+                <Button href={buttonHref} variant="primary">
+                  {buttonText}
+                </Button>
+              </div>
+            )}
+          </div>
+          {image && (
+            <div className={styles.imageColumn} data-aos="fade-left" data-aos-delay="200">
+              <img src={image} alt={imageAlt} className={styles.image} />
             </div>
           )}
         </div>
