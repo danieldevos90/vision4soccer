@@ -258,5 +258,13 @@
         "email": "edk@vvcs.nl"
       }
     ]
+  },
+  "articles": {
+    "title": "Articles",
+    "loading": "Loading articles...",
+    "empty": "No articles found.",
+    "error": "Error",
+    "authorPrefix": "By",
+    "readMore": "Read more →"
   }
 }

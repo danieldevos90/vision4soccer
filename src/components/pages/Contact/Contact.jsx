@@ -22,8 +22,8 @@ export const Contact = () => {
   const baseUrl = 'https://vision4soccer.nl';
   
   const breadcrumbItems = [
-    { name: language === 'nl' ? 'Home' : 'Home', url: `${baseUrl}/` },
-    { name: language === 'nl' ? 'Contact' : 'Contact', url: seoData.canonical },
+    { name: t('nav.home'), url: `${baseUrl}/` },
+    { name: t('contact.title'), url: seoData.canonical },
   ];
 
   return (

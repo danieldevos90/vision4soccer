@@ -66,13 +66,13 @@ export const Footer = () => {
               {t('footer.address')}
             </Heading>
             <Text variant="light" className={styles.footerText}>
-              Scorpius 161
+              {t('contact.address.line1')}
             </Text>
             <Text variant="light" className={styles.footerText}>
-              2132 LR Hoofddorp
+              {t('contact.address.line2')}
             </Text>
             <Text variant="light" className={styles.footerText}>
-              Nederland
+              {t('contact.address.line3')}
             </Text>
           </div>
 

@@ -21,8 +21,8 @@ export const Youth = () => {
   const baseUrl = 'https://vision4soccer.nl';
   
   const breadcrumbItems = [
-    { name: language === 'nl' ? 'Home' : 'Home', url: `${baseUrl}/` },
-    { name: language === 'nl' ? 'Jeugd' : 'Youth', url: seoData.canonical },
+    { name: t('nav.home'), url: `${baseUrl}/` },
+    { name: t('youth.title'), url: seoData.canonical },
   ];
 
   return (

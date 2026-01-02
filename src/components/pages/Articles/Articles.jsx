@@ -36,8 +36,8 @@ export const Articles = () => {
   const organizationSchema = getOrganizationSchema();
   
   const breadcrumbItems = [
-    { name: language === 'nl' ? 'Home' : 'Home', url: `${baseUrl}/` },
-    { name: language === 'nl' ? 'Artikelen' : 'Articles', url: seoData.canonical },
+    { name: t('nav.home'), url: `${baseUrl}/` },
+    { name: t('articles.title'), url: seoData.canonical },
   ];
 
   if (loading) {
@@ -46,7 +46,7 @@ export const Articles = () => {
         <Header />
         <section className={styles.section}>
           <Container>
-            <div className={styles.loading}>{language === 'nl' ? 'Artikelen laden...' : 'Loading articles...'}</div>
+            <div className={styles.loading}>{t('articles.loading')}</div>
           </Container>
         </section>
         <Footer />
@@ -60,7 +60,7 @@ export const Articles = () => {
         <Header />
         <section className={styles.section}>
           <Container>
-            <div className={styles.error}>{language === 'nl' ? `Fout: ${error}` : `Error: ${error}`}</div>
+            <div className={styles.error}>{t('articles.error')}: {error}</div>
           </Container>
         </section>
         <Footer />
@@ -82,12 +82,12 @@ export const Articles = () => {
       <section className={styles.section}>
         <Container>
           <Heading level={1} className={styles.title}>
-            {language === 'nl' ? 'Artikelen' : 'Articles'}
+            {t('articles.title')}
           </Heading>
         
         {articles.length === 0 ? (
           <Text className={styles.empty}>
-            {language === 'nl' ? 'Geen artikelen gevonden.' : 'No articles found.'}
+            {t('articles.empty')}
           </Text>
         ) : (
           <div className={styles.grid}>
@@ -113,7 +113,7 @@ export const Articles = () => {
                   )}
                   {article.author && (
                     <Text className={styles.author}>
-                      By {article.author}
+                      {t('articles.authorPrefix')} {article.author}
                     </Text>
                   )}
                   {article.published_at && (
@@ -129,7 +129,7 @@ export const Articles = () => {
                     href={`/articles/${article.slug}`}
                     className={styles.link}
                   >
-                    Read more →
+                    {t('articles.readMore')}
                   </a>
                 </div>
               </article>

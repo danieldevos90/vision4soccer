@@ -24,8 +24,8 @@ export const Profile = () => {
   const baseUrl = 'https://vision4soccer.nl';
   
   const breadcrumbItems = [
-    { name: language === 'nl' ? 'Home' : 'Home', url: `${baseUrl}/` },
-    { name: language === 'nl' ? 'Profiel' : 'Profile', url: seoData.canonical },
+    { name: t('nav.home'), url: `${baseUrl}/` },
+    { name: t('profile.title'), url: seoData.canonical },
   ];
 
   const tabs = [
