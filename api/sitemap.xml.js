@@ -17,16 +17,25 @@ const routes = [
 ];
 
 // Use production domain - can be configured via environment variable
-const getBaseUrl = () => {
+const getBaseUrl = (req) => {
+  // Check if request has a host header (production domain)
+  if (req && req.headers && req.headers.host) {
+    const host = req.headers.host;
+    // If it's the production domain, use it
+    if (host.includes('vision4soccer.nl')) {
+      return `https://${host}`;
+    }
+  }
+  
+  // Fall back to environment variables
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.startsWith('http') 
       ? process.env.NEXT_PUBLIC_SITE_URL 
       : `https://${process.env.NEXT_PUBLIC_SITE_URL}`;
   }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  return 'https://vision4soccer.nl';
+  
+  // Default to production domain
+  return 'https://www.vision4soccer.nl';
 };
 
 export default async function handler(req, res) {
@@ -34,7 +43,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const baseUrl = getBaseUrl();
+  const baseUrl = getBaseUrl(req);
   const currentDate = new Date().toISOString();
 
   // Generate XML sitemap
