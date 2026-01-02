@@ -72,7 +72,7 @@
   background-color: var(--color-text-light);
   position: relative;
   display: block;
-  transition: background-color 0.2s ease 0.1s;
+  transition: background-color 0.15s ease 0s, height 0.15s ease 0s;
   margin: 0 auto;
 }
 
@@ -101,19 +101,20 @@
 /* Hamburger icon animation when menu is open */
 .menuToggle.menuToggleOpen .menuIcon {
   background-color: transparent;
-  transition: background-color 0.1s ease 0s;
+  height: 0;
+  transition: background-color 0.1s ease 0s, height 0.1s ease 0s;
 }
 
 .menuToggle.menuToggleOpen .menuIcon::before {
   top: 0;
   transform: rotate(45deg);
-  transition: transform 0.3s ease 0.1s, top 0.3s ease 0.1s;
+  transition: transform 0.3s ease 0.15s, top 0.3s ease 0.15s;
 }
 
 .menuToggle.menuToggleOpen .menuIcon::after {
   bottom: 0;
   transform: rotate(-45deg);
-  transition: transform 0.3s ease 0.1s, bottom 0.3s ease 0.1s;
+  transition: transform 0.3s ease 0.15s, bottom 0.3s ease 0.15s;
 }
 
 .nav {
