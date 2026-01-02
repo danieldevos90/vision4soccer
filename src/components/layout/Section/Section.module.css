@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.backgroundWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.backgroundInner {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg-dark);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Padding variants */
+.paddingTopNone {
+  padding-top: 0;
+}
+
+.paddingTopSmall {
+  padding-top: var(--spacing-lg);
+}
+
+.paddingTopNormal {
+  padding-top: var(--spacing-2xl);
+}
+
+.paddingTopLarge {
+  padding-top: var(--spacing-3xl);
+}
+
+.paddingTopQuad {
+  padding-top: calc(var(--spacing-3xl) * 2);
+}
+
+.paddingBottomNone {
+  padding-bottom: 0;
+}
+
+.paddingBottomSmall {
+  padding-bottom: var(--spacing-lg);
+}
+
+.paddingBottomNormal {
+  padding-bottom: var(--spacing-2xl);
+}
+
+.paddingBottomLarge {
+  padding-bottom: var(--spacing-3xl);
+}
+
+.paddingBottomQuad {
+  padding-bottom: calc(var(--spacing-3xl) * 2);
+}

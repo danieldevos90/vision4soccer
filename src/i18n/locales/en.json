@@ -1,0 +1,262 @@
+{
+  "nav": {
+    "home": "Home",
+    "profiel": "Profile",
+    "jeugd": "Youth",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Vision4Soccer",
+    "subtitle": "Elite sports guidance with vision"
+  },
+  "content": {
+    "heading": "Founded by and for footballers.",
+    "text": "Since 1999, we, former professional footballer Edwin Olde Riekerink and VVCS, have been active as a team in the national and international market. Trust, knowledge and experience form the basis for technical, mental, physical and business support of our players.",
+    "button": "Read more.."
+  },
+  "testimonials": {
+    "title": "What our players say",
+    "items": [
+      {
+        "quote": "Vision4Soccer is a warm and personal organization that thinks in the interest of your career. I had a good feeling about it from the first moment",
+        "author": "Michael de Leeuw - Willem II"
+      },
+      {
+        "quote": "Vision4Soccer and I, a good team for years",
+        "author": "Bryan Linssen - Urawa Red Diamonds"
+      },
+      {
+        "quote": "At Vision4Soccer I get reliable, honest and good guidance during my career",
+        "author": "Justin Hoogma - Heracles Almelo"
+      },
+      {
+        "quote": "How you and your family feel is for Vision4Soccer the most considering point. Trustworthy and a personal relationship",
+        "author": "Eric Botteghin - Ascoli Calcio"
+      }
+    ]
+  },
+  "instagram": {
+    "title": "Media Wall",
+    "subtitle": "Vision4Soccer",
+    "follow": "Follow on Instagram"
+  },
+  "footer": {
+    "sitemap": "Sitemap",
+    "address": "Office Address",
+    "contact": "Get in touch with us",
+    "contactButton": "Contact us",
+    "copyright": "© {{year}} Vision4Soccer – {{link}} Website",
+    "controversee": "blablabuild"
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Who we are",
+    "tabs": {
+      "vision4soccer": "VISION4SOCCER",
+      "visie": "VISION"
+    },
+    "vision4soccer": {
+      "heading": "Founded by and for footballers.",
+      "text": "Vision4Soccer was founded by and for footballers. Since 1999, we, Edwin Olde Riekerink and the VVCS, have been active as a team in the national and international market. Trust, knowledge and experience form the basis for technical, mental, physical and business support of our players.",
+      "sections": [
+        {
+          "heading": "VVCS Partner",
+          "text": "The VVCS is the exclusive partner in the field of player guidance. This means you are guaranteed the best legal support during your career."
+        },
+        {
+          "heading": "Our Mission",
+          "text": "Vision4Soccer provides comprehensive guidance to professional footballers, helping them navigate their careers both on and off the pitch. We combine technical expertise with personal attention to ensure our players reach their full potential."
+        },
+        {
+          "heading": "Our Approach",
+          "text": "We believe in building long-term relationships based on trust and transparency. Our team works closely with players to develop personalized strategies that address technical skills, mental resilience, physical conditioning, and career management."
+        },
+        {
+          "heading": "Our Expertise",
+          "text": "With years of experience in the football world, we offer specialized services in contract negotiations, transfers, media training, financial planning, and personal development. Our extensive knowledge of the national and international football market enables us to provide our players with the best opportunities."
+        }
+      ],
+      "people": [
+        {
+          "name": "Arnold Oosterveer",
+          "bio": "Arnold Oosterveer (1963) began his professional football career at Telstar in 1984. In 1998, Arnold joined the VVCS. He continued working there until 1999, when he co-founded Vision4Soccer together with Edwin Olde Riekerink.",
+          "career": [
+            {
+              "period": "1984-1986",
+              "club": "Telstar"
+            },
+            {
+              "period": "1986-1988",
+              "club": "AZ"
+            },
+            {
+              "period": "1988-1990",
+              "club": "Niort"
+            },
+            {
+              "period": "1990-1992",
+              "club": "Stade Rennes"
+            },
+            {
+              "period": "1992-1993",
+              "club": "Valenciennes"
+            },
+            {
+              "period": "1993-1997",
+              "club": "SC Heerenveen"
+            }
+          ]
+        },
+        {
+          "name": "Edwin Olde Riekerink",
+          "bio": "Edwin Olde Riekerink (1961) made his debut at Sparta as an 18-year-old. Edwin combined football with his work as a physiotherapist. As a member of the players' council of FC Groningen, he had a lot of contact with the VVCS. During that period, he was also a member of the Central Players' Council for several years. After his football career, Edwin became a player supervisor at the VVCS in 1995. In 1999, he co-founded SoccerVision and from July 1, 2022, he continues these activities in Vision4Soccer.",
+          "career": [
+            {
+              "period": "1979-1986",
+              "club": "Sparta"
+            },
+            {
+              "period": "1986-1995",
+              "club": "FC Groningen"
+            }
+          ]
+        },
+        {
+          "name": "Patrick van Diemen",
+          "bio": "Patrick van Diemen (1972) made his debut at FC Utrecht as an 18-year-old. During his football career, Patrick studied Law and Sports Management, and was a member of the Central Players' Council and the participants' council of the CFK. Since 2008, he has been working as a player supervisor.",
+          "career": [
+            {
+              "period": "1990-1993",
+              "club": "FC Utrecht"
+            },
+            {
+              "period": "1993-1994",
+              "club": "FC Utrecht - AZ"
+            },
+            {
+              "period": "1994-1996",
+              "club": "NEC Nijmegen"
+            },
+            {
+              "period": "1996-1998",
+              "club": "RKC Waalwijk"
+            },
+            {
+              "period": "1998-2001",
+              "club": "RSC Anderlecht"
+            },
+            {
+              "period": "2001-2008",
+              "club": "RKC Waalwijk"
+            }
+          ]
+        },
+        {
+          "name": "Louis Laros",
+          "bio": "Louis Laros (1973) made his debut at Willem II at the age of 17. After his disqualification due to a serious knee injury, Louis was a youth trainer at Vitesse in his last two years, before becoming a player supervisor in 2004.",
+          "career": [
+            {
+              "period": "1990-1992",
+              "club": "Willem II"
+            },
+            {
+              "period": "1992-1994",
+              "club": "VVV-Venlo (on loan)"
+            },
+            {
+              "period": "1994-1995",
+              "club": "Willem II"
+            },
+            {
+              "period": "1995-2004",
+              "club": "Vitesse"
+            }
+          ]
+        },
+        {
+          "name": "Edwin de Kruijff",
+          "bio": "Edwin de Kruijff (1970) made his debut at FC Utrecht as a 17-year-old. In 2001, he ended his career due to a knee injury and started as a player supervisor at the VVCS, where he worked for 7 years. He continued his career in football as head of scouting and technical manager at FC Utrecht. After that, he was technical manager at NEC Nijmegen. As of January 1, 2019, Edwin de Kruijff is again active as a player supervisor.",
+          "career": [
+            {
+              "period": "1987-1995",
+              "club": "FC Utrecht"
+            },
+            {
+              "period": "1995-1997",
+              "club": "FC Groningen"
+            },
+            {
+              "period": "1997-2001",
+              "club": "BV Veendam"
+            }
+          ]
+        }
+      ]
+    },
+    "visie": {
+      "heading": "Our Vision",
+      "text": "Getting the maximum out of your football career while keeping both feet on the ground? We can support you in that. We give care and attention to every decision that affects your career, coming from a football heart. Transparency and honesty are the basis for good cooperation. Football is a profession in itself. Being a professional footballer means performing optimally on and off the field. As former professional footballers and as agents, we know better than anyone what that entails.",
+      "sections": [
+        {
+          "heading": "Holistic Guidance",
+          "text": "We look beyond just the football pitch. Our guidance encompasses all aspects of a professional footballer's life: technical development, mental resilience, physical conditioning, financial planning, and personal growth."
+        },
+        {
+          "heading": "Personal Relationships",
+          "text": "Every player is unique and deserves a personal approach. We invest time in building strong, trusting relationships with our players and their families. This personal bond forms the foundation for successful long-term guidance."
+        },
+        {
+          "heading": "Transparency and Integrity",
+          "text": "Transparency and integrity are central to everything we do. We communicate openly and honestly with our players and ensure that all decisions are made in their best interest. This approach has helped us build a solid reputation in the football world."
+        }
+      ]
+    }
+  },
+  "youth": {
+    "title": "Youth",
+    "heading": "Youth",
+    "text": "Are you older than 14 years and 6 months? Are you at the beginning of a promising career and are there a lot of new things coming your way? Then you and your parents/guardians can come to us free of charge with all your questions for advice and guidance.",
+    "sections": []
+  },
+  "contact": {
+    "title": "Contact",
+    "heading": "Get in Touch",
+    "text": "We would be happy to discuss how Vision4Soccer can support you or your organization. Please reach out to us using the contact information below.",
+    "address": {
+      "title": "Our office",
+      "line1": "Scorpius 161",
+      "line2": "2132 LR Hoofddorp",
+      "line3": "Netherlands"
+    },
+    "phone": {
+      "title": "Phone",
+      "number": ""
+    },
+    "email": {
+      "title": "Email",
+      "address": "info@vision4soccer.nl"
+    },
+    "people": [
+      {
+        "name": "Edwin Olde Riekerink",
+        "phone": "+31 (0)6 5142 9063",
+        "email": "edwin@vision4soccer.nl"
+      },
+      {
+        "name": "Louis Laros",
+        "phone": "+31 (0)6 2245 7763",
+        "email": "llaros@vvcs.nl"
+      },
+      {
+        "name": "Patrick van Diemen",
+        "phone": "+31 (0)6 2503 3037",
+        "email": "p.van.diemen@vvcs.nl"
+      },
+      {
+        "name": "Edwin de Kruijff",
+        "phone": "+31 (0)6 1090 7013",
+        "email": "edk@vvcs.nl"
+      }
+    ]
+  }
+}

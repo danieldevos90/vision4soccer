@@ -1,0 +1,83 @@
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.content {
+  width: 100%;
+}
+
+.header {
+  margin-bottom: var(--spacing-2xl);
+  text-align: left;
+}
+
+.title {
+  margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.post {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: scale(1.05);
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+.followButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.followButton:hover {
+  opacity: 0.9;
+}
+
+.instagramIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .feed {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+}

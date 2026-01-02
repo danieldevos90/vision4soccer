@@ -1,0 +1,269 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menuContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.rowMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.rowMenuInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoContainer {
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+}
+
+.logoImage {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  max-width: 300px;
+  filter: brightness(0) invert(1);
+}
+
+.mobileMenuButton {
+  display: none;
+}
+
+.menuToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.menuIcon {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-light);
+  position: relative;
+  display: block;
+  transition: background-color 0.2s ease 0.1s;
+  margin: 0 auto;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-light);
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+  transform-origin: center;
+}
+
+.menuIcon::before {
+  top: -8px;
+  transform: rotate(0deg);
+}
+
+.menuIcon::after {
+  bottom: -8px;
+  transform: rotate(0deg);
+}
+
+/* Hamburger icon animation when menu is open */
+.menuToggle.menuToggleOpen .menuIcon {
+  background-color: transparent;
+  transition: background-color 0.1s ease 0s;
+}
+
+.menuToggle.menuToggleOpen .menuIcon::before {
+  top: 0;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease 0.1s, top 0.3s ease 0.1s;
+}
+
+.menuToggle.menuToggleOpen .menuIcon::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease 0.1s, bottom 0.3s ease 0.1s;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  margin: 0;
+}
+
+.menuLink {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: opacity 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menuLink:hover {
+  opacity: 0.7;
+}
+
+.menuLink.active {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.flag {
+  width: 20px;
+  height: auto;
+}
+
+/* Language switcher in menu */
+.menuItem :global(.languageSwitcher) {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Mobile styles */
+@media (max-width: 960px) {
+  .header {
+    z-index: 1001;
+  }
+
+  .logoContainer {
+    z-index: 1002;
+    position: relative;
+  }
+
+  .mobileMenuButton {
+    display: block;
+    z-index: 1002;
+    position: relative;
+  }
+
+  .menuToggle {
+    z-index: 1003;
+  }
+
+  .menuToggle.menuToggleOpen .menuIcon,
+  .menuToggle.menuToggleOpen .menuIcon::before,
+  .menuToggle.menuToggleOpen .menuIcon::after {
+    background-color: var(--color-text-dark);
+  }
+
+  /* Update logo when menu is open */
+  .header.menuOpen .logoImage {
+    filter: brightness(0) invert(0);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg-light);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 0;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .menuItem {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .menuItem:last-child {
+    border-bottom: none;
+    margin-top: 2rem;
+  }
+
+  .menuLink {
+    padding: 1.5rem 0;
+    display: block;
+    font-size: 1.25rem;
+    color: var(--color-text-dark);
+    text-align: center;
+    width: 100%;
+  }
+
+  .menuLink:hover {
+    opacity: 0.7;
+  }
+
+  .menuLink.active {
+    color: var(--color-primary);
+  }
+}

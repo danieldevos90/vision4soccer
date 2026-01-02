@@ -1,0 +1,102 @@
+.hero {
+  padding: 120px 0 60px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  margin-bottom: 0;
+}
+
+.contactInfo {
+  padding: 60px 0;
+  background-color: #F5F5F5;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contactItem {
+  text-align: center;
+}
+
+.contactItem h3 {
+  margin-bottom: 20px;
+}
+
+.link {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.emailSection {
+  margin-top: 20px;
+}
+
+.peopleSection {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid #ddd;
+}
+
+.peopleHeading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.peopleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.personCard {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.personName {
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.personContact {
+  margin: 10px 0;
+}
+
+.personContact a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.personContact a:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .peopleGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

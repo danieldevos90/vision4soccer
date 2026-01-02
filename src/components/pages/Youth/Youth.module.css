@@ -1,0 +1,11 @@
+.hero {
+  padding: 120px 0 60px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  margin-bottom: 0;
+}

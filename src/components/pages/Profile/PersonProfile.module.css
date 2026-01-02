@@ -1,0 +1,107 @@
+.personProfile {
+  height: 100%;
+  display: flex;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.profileCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profileCard:hover .image {
+  transform: scale(1.05);
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  flex: 1;
+}
+
+.name {
+  margin-bottom: 0;
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.bio {
+  line-height: 1.7;
+  color: #555;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.career {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.careerItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.careerIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.careerText {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    height: 240px;
+  }
+
+  .textContent {
+    padding: 20px;
+  }
+
+  .name {
+    font-size: 1.3rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+}

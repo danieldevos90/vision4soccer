@@ -1,0 +1,54 @@
+.text {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Variants */
+.body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+}
+
+.lead {
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+.light {
+  color: var(--color-text-light);
+}
+
+.dark {
+  color: var(--color-text-dark);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+/* Sizes */
+.xs {
+  font-size: 11px;
+}
+
+.sm {
+  font-size: 13px;
+}
+
+.base {
+  font-size: 16px;
+}
+
+.lg {
+  font-size: 20px;
+}
+
+.xl {
+  font-size: 22px;
+}
+
+.size2xl {
+  font-size: 27px;
+}

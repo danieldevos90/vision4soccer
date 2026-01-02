@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucide Icons Examples - Vision4Soccer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .icon-demo {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 4px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        .nav-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .nav-item:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Lucide Icons Examples</h1>
+        
+        <h2>Basic Usage</h2>
+        <div class="example">
+            <p>Add icons using the <code>data-lucide</code> attribute:</p>
+            <div class="code">
+&lt;i data-lucide="home"&gt;&lt;/i&gt;
+&lt;i data-lucide="user"&gt;&lt;/i&gt;
+&lt;i data-lucide="mail"&gt;&lt;/i&gt;
+            </div>
+            <div class="icon-demo">
+                <i data-lucide="home" style="width: 24px; height: 24px;"></i>
+                <i data-lucide="user" style="width: 24px; height: 24px;"></i>
+                <i data-lucide="mail" style="width: 24px; height: 24px;"></i>
+                <i data-lucide="phone" style="width: 24px; height: 24px;"></i>
+                <i data-lucide="calendar" style="width: 24px; height: 24px;"></i>
+            </div>
+        </div>
+
+        <h2>Using createLucideIcon() Function</h2>
+        <div class="example">
+            <p>Create icons programmatically:</p>
+            <div class="code">
+const icon = createLucideIcon('soccer', {
+    size: 32,
+    color: '#4CAF50',
+    class: 'my-icon'
+});
+            </div>
+            <div id="programmatic-icons" class="icon-demo"></div>
+        </div>
+
+        <h2>Icons in Buttons</h2>
+        <div class="example">
+            <div class="icon-demo">
+                <button class="btn">
+                    <i data-lucide="home"></i>
+                    Home
+                </button>
+                <button class="btn">
+                    <i data-lucide="user"></i>
+                    Profile
+                </button>
+                <button class="btn">
+                    <i data-lucide="mail"></i>
+                    Contact
+                </button>
+            </div>
+        </div>
+
+        <h2>Icons in Navigation</h2>
+        <div class="example">
+            <nav style="display: flex; gap: 10px;">
+                <a href="#" class="nav-item">
+                    <i data-lucide="home" style="width: 18px; height: 18px;"></i>
+                    Home
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+                    Profile
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="users" style="width: 18px; height: 18px;"></i>
+                    Jeugd
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+                    Contact
+                </a>
+            </nav>
+        </div>
+
+        <h2>Using addIcon() Helper</h2>
+        <div class="example">
+            <p>Add icons to existing elements:</p>
+            <div class="code">
+addIcon('.nav-link', 'arrow-right', { position: 'after', size: 16 });
+            </div>
+            <div>
+                <a href="#" class="nav-item nav-link">Read More</a>
+            </div>
+        </div>
+
+        <h2>Popular Icons for Sports Site</h2>
+        <div class="example">
+            <div class="icon-demo" style="flex-wrap: wrap;">
+                <i data-lucide="trophy" style="width: 32px; height: 32px; color: #FFD700;"></i>
+                <i data-lucide="soccer" style="width: 32px; height: 32px; color: #4CAF50;"></i>
+                <i data-lucide="users" style="width: 32px; height: 32px; color: #2196F3;"></i>
+                <i data-lucide="calendar" style="width: 32px; height: 32px; color: #FF9800;"></i>
+                <i data-lucide="map-pin" style="width: 32px; height: 32px; color: #F44336;"></i>
+                <i data-lucide="mail" style="width: 32px; height: 32px; color: #9C27B0;"></i>
+                <i data-lucide="phone" style="width: 32px; height: 32px; color: #00BCD4;"></i>
+                <i data-lucide="instagram" style="width: 32px; height: 32px; color: #E91E63;"></i>
+                <i data-lucide="facebook" style="width: 32px; height: 32px; color: #1877F2;"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/public/lucide-icons.js"></script>
+    <script>
+        // Example: Create icons programmatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('programmatic-icons');
+            
+            const icons = [
+                { name: 'soccer', color: '#4CAF50' },
+                { name: 'trophy', color: '#FFD700' },
+                { name: 'star', color: '#FF9800' }
+            ];
+            
+            icons.forEach(icon => {
+                const iconEl = createLucideIcon(icon.name, {
+                    size: 32,
+                    color: icon.color
+                });
+                container.appendChild(iconEl);
+            });
+
+            // Add icon to nav-link
+            addIcon('.nav-link', 'arrow-right', { 
+                position: 'after', 
+                size: 16,
+                color: '#4CAF50'
+            });
+        });
+    </script>
+</body>
+</html>

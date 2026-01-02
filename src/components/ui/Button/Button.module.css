@@ -1,0 +1,77 @@
+.button {
+  display: inline-block;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  font-size: 1.125em;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-text-dark);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-text-light);
+  border: 2px solid var(--color-text-light);
+}
+
+/* Sizes */
+.sm {
+  padding: calc(0.5em + 2px) calc(1em + 2px);
+  font-size: 0.875em;
+}
+
+.md {
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  font-size: 1em;
+}
+
+.lg {
+  padding: calc(0.875em + 2px) calc(1.75em + 2px);
+  font-size: 1.25em;
+}
+
+/* Icon variants */
+.iconLeft {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.iconRight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-direction: row-reverse;
+}
+
+/* Border width variants */
+.borderWidth0 {
+  border-width: 0;
+}
