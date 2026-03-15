@@ -236,5 +236,29 @@
     "error": "Error",
     "authorPrefix": "By",
     "readMore": "Read more →"
+  },
+  "cookie": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to enhance your experience and analyze our website. You can choose which cookies you accept.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "customize": "Customize",
+    "savePreferences": "Save Preferences",
+    "close": "Close",
+    "preferencesButton": "Cookie Preferences",
+    "privacyPolicy": "Privacy Policy",
+    "privacyPolicyUrl": "/privacy",
+    "necessary": {
+      "title": "Necessary Cookies",
+      "description": "These cookies are essential for the website to function and cannot be disabled."
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "description": "These cookies help us understand how visitors use the website by collecting and reporting information."
+    },
+    "advertising": {
+      "title": "Advertising Cookies",
+      "description": "These cookies are used to show relevant advertisements and measure the effectiveness of advertising campaigns."
+    }
   }
 }

@@ -1,21 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '../../layout/Container/Container';
 import { Heading } from '../../ui/Heading/Heading';
 import { useI18n } from '../../../i18n/i18n';
+import { useInstagram } from '../../../hooks/useInstagram';
 import { insta } from '../../../data/insta';
 import styles from './InstagramFeed.module.css';
 
 /**
  * InstagramFeed Component
- * Instagram feed grid display
+ * Instagram feed grid display with dynamic fetching from Behold.so
  */
-export const InstagramFeed = ({ posts = [] }) => {
+export const InstagramFeed = ({ posts: propPosts = [] }) => {
   const { t } = useI18n();
   
-  // Transform Instagram API data to component format
-  const transformPosts = (instagramPosts) => {
-    return instagramPosts.map((post) => {
-      // Get image URL - prefer medium size, fallback to large or small
+  // Fetch Instagram posts dynamically from Behold.so
+  // If propPosts are provided, use those instead (for backwards compatibility)
+  const { posts: fetchedPosts, loading, error } = useInstagram({ 
+    limit: 9,
+    enabled: propPosts.length === 0 // Only fetch if no posts provided
+  });
+
+  // Use provided posts, fetched posts, or fallback to static data
+  let postsToUse = [];
+  let dataSource = '';
+  
+  if (propPosts.length > 0) {
+    // Use provided posts (for backwards compatibility)
+    postsToUse = propPosts.slice(0, 9);
+    dataSource = 'props';
+    console.log('[InstagramFeed] Using posts from props:', postsToUse.length);
+  } else if (fetchedPosts.length > 0) {
+    // Use dynamically fetched posts
+    postsToUse = fetchedPosts.slice(0, 9);
+    dataSource = 'api';
+    console.log('[InstagramFeed] Using posts from API:', postsToUse.length);
+  } else if (!loading) {
+    // Fallback to static data if fetch fails or no data available
+    console.warn('[InstagramFeed] FALLBACK: Using static data from insta.js');
+    console.warn('[InstagramFeed] Fetch state:', { loading, error, fetchedPostsCount: fetchedPosts.length });
+    dataSource = 'static';
+    postsToUse = insta.posts.slice(0, 9).map((post) => {
       let imageUrl = post.mediaUrl;
       if (post.sizes) {
         imageUrl = post.sizes.medium?.mediaUrl || 
@@ -24,7 +48,6 @@ export const InstagramFeed = ({ posts = [] }) => {
                    post.mediaUrl;
       }
       
-      // Handle carousel albums - use first child image if available
       if (post.mediaType === 'CAROUSEL_ALBUM' && post.children && post.children.length > 0) {
         const firstChild = post.children[0];
         if (firstChild.sizes) {
@@ -44,11 +67,20 @@ export const InstagramFeed = ({ posts = [] }) => {
         url: post.permalink,
       };
     });
-  };
+    console.log(`[InstagramFeed] Static fallback: Using ${postsToUse.length} posts from insta.js`);
+  }
 
-  const transformedPosts = posts.length > 0 ? posts : transformPosts(insta.posts);
-  // Limit to 9 posts for 3x3 grid
-  const postsToUse = transformedPosts.slice(0, 9);
+  // Log data source changes
+  useEffect(() => {
+    if (postsToUse.length > 0 && dataSource) {
+      console.log(`[InstagramFeed] ✅ Displaying ${postsToUse.length} posts from: ${dataSource}`, {
+        loading,
+        error,
+        fetchedPostsCount: fetchedPosts.length,
+        propPostsCount: propPosts.length,
+      });
+    }
+  }, [postsToUse.length, dataSource, loading, error, fetchedPosts.length, propPosts.length]);
 
   return (
     <section className={styles.section} data-aos="fade-up">
@@ -64,24 +96,30 @@ export const InstagramFeed = ({ posts = [] }) => {
           </div>
 
           <div className={styles.feed}>
-            {postsToUse.map((post, index) => (
-              <a
-                key={post.id}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.post}
-                data-aos="zoom-in"
-                data-aos-delay={200 + (index * 50)}
-              >
-                <img
-                  src={post.image}
-                  alt={post.alt}
-                  className={styles.postImage}
-                  loading="lazy"
-                />
-              </a>
-            ))}
+            {loading && postsToUse.length === 0 ? (
+              <div className={styles.loading}>Loading Instagram feed...</div>
+            ) : error && postsToUse.length === 0 ? (
+              <div className={styles.error}>Unable to load Instagram feed</div>
+            ) : (
+              postsToUse.map((post, index) => (
+                <a
+                  key={post.id}
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.post}
+                  data-aos="zoom-in"
+                  data-aos-delay={200 + (index * 50)}
+                >
+                  <img
+                    src={post.image}
+                    alt={post.alt}
+                    className={styles.postImage}
+                    loading="lazy"
+                  />
+                </a>
+              ))
+            )}
           </div>
 
           <div className={styles.footer} data-aos="fade-up" data-aos-delay="600">

@@ -74,6 +74,18 @@
   height: 20px;
 }
 
+.loading,
+.error {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary, #666);
+}
+
+.error {
+  color: var(--color-error, #d32f2f);
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .feed {

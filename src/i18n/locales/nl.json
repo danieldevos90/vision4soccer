@@ -236,5 +236,29 @@
     "error": "Fout",
     "authorPrefix": "Door",
     "readMore": "Lees meer →"
+  },
+  "cookie": {
+    "title": "Cookie-instellingen",
+    "description": "Wij gebruiken cookies om uw ervaring te verbeteren en onze website te analyseren. U kunt zelf kiezen welke cookies u accepteert.",
+    "acceptAll": "Alles accepteren",
+    "rejectAll": "Alles weigeren",
+    "customize": "Aanpassen",
+    "savePreferences": "Voorkeuren opslaan",
+    "close": "Sluiten",
+    "preferencesButton": "Cookie-voorkeuren",
+    "privacyPolicy": "Privacybeleid",
+    "privacyPolicyUrl": "/privacy",
+    "necessary": {
+      "title": "Noodzakelijke cookies",
+      "description": "Deze cookies zijn essentieel voor het functioneren van de website en kunnen niet worden uitgeschakeld."
+    },
+    "analytics": {
+      "title": "Analytische cookies",
+      "description": "Deze cookies helpen ons te begrijpen hoe bezoekers de website gebruiken door informatie te verzamelen en te rapporteren."
+    },
+    "advertising": {
+      "title": "Advertentiecookies",
+      "description": "Deze cookies worden gebruikt om relevante advertenties te tonen en de effectiviteit van advertentiecampagnes te meten."
+    }
   }
 }

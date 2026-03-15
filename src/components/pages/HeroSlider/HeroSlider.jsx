@@ -12,6 +12,8 @@ export const HeroSlider = ({ slides = [] }) => {
   const [isPaused, setIsPaused] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const { t } = useI18n();
+  const AUTOPLAY_INTERVAL_MS = 6000;
+  const AUTOPLAY_RESUME_AFTER_INTERACTION_MS = 8000;
 
   // Slide configuration:
   // - position: Controls where the image is positioned. Use 'center 30%' to keep faces visible
@@ -33,18 +35,26 @@ export const HeroSlider = ({ slides = [] }) => {
     {
       image: '/homepage_images/ThijsDallinga.png',
       copyright: 'ProShots/ZumaPress',
-      position: 'center 30%',
+      // Slightly more top visible (hair not cut off)
+      position: 'center 25%',
       fit: 'cover',
     },
     {
       image: '/homepage_images/KjellScherpen.jpg',
       copyright: 'ProShots/Pressmphoto',
+      // Slightly more top visible (hair not cut off)
+      position: 'center 25%',
+      fit: 'cover',
+    },
+    {
+      image: '/homepage_images/JPHecke.jpg',
+      // Default framing; adjust if needed after a quick visual check.
       position: 'center 30%',
       fit: 'cover',
     },
     {
-      image: '/homepage_images/TygoLand.jpg',
-      copyright: 'ProShots/ZumaPress',
+      image: '/homepage_images/TygoLand.png',
+      copyright: 'ProShots/NielsBoersema',
       position: 'center 40%',
       fit: 'cover',
     },
@@ -61,15 +71,17 @@ export const HeroSlider = ({ slides = [] }) => {
       fit: 'cover',
     },
     {
-      image: '/homepage_images/ThijmenBlokzijl.JPG',
-      copyright: 'ProShots/NielsBoersema',
-      position: 'center 40%',
+      image: '/homepage_images/ThijmenBlokzijl.png',
+      copyright: 'ProShots/ShaneWinsser',
+      // Slightly lower framing vs previous.
+      position: 'center 45%',
       fit: 'cover',
     },
     {
       image: '/homepage_images/RobinPropper.jpg',
       copyright: 'ProShots/RobinJonker',
-      position: 'center 30%',
+      // Slightly more top visible (hair not cut off)
+      position: 'center 25%',
       fit: 'cover',
     },
     {
@@ -81,7 +93,8 @@ export const HeroSlider = ({ slides = [] }) => {
     {
       image: '/homepage_images/FrederikJensen.jpg',
       copyright: 'ProShots/ZumaPress',
-      position: 'center 30%',
+      // Slightly more top visible (hair not cut off)
+      position: 'center 25%',
       fit: 'cover',
     },
   ];
@@ -112,7 +125,7 @@ export const HeroSlider = ({ slides = [] }) => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slidesToUse.length);
-    }, 3000);
+    }, AUTOPLAY_INTERVAL_MS);
 
     return () => clearInterval(interval);
   }, [slidesToUse.length, isPaused, imagesLoaded]);
@@ -120,19 +133,19 @@ export const HeroSlider = ({ slides = [] }) => {
   const goToSlide = (index) => {
     setCurrentSlide(index);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 5000);
+    setTimeout(() => setIsPaused(false), AUTOPLAY_RESUME_AFTER_INTERACTION_MS);
   };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesToUse.length);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 5000);
+    setTimeout(() => setIsPaused(false), AUTOPLAY_RESUME_AFTER_INTERACTION_MS);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slidesToUse.length) % slidesToUse.length);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 5000);
+    setTimeout(() => setIsPaused(false), AUTOPLAY_RESUME_AFTER_INTERACTION_MS);
   };
 
   return (
@@ -140,14 +153,17 @@ export const HeroSlider = ({ slides = [] }) => {
       {slidesToUse.map((slide, index) => (
         <div
           key={index}
-          className={`${styles.slide} ${
-            index === currentSlide ? styles.active : ''
-          }`}
+          className={[
+            styles.slide,
+            index === currentSlide ? styles.active : '',
+            slide.fit === 'cover' ? styles.fitCover : styles.fitContain,
+          ]
+            .filter(Boolean)
+            .join(' ')}
           style={{
-            backgroundImage: `url("${slide.image}")`,
-            backgroundPosition: slide.position || 'center 30%',
-            backgroundSize: slide.fit === 'contain' ? 'contain' : slide.fit === 'cover-top' ? 'cover' : 'cover',
-            backgroundRepeat: 'no-repeat',
+            // Use CSS layers for better responsive behavior (blurred fill + main image).
+            '--hero-image': `url("${slide.image}")`,
+            '--hero-position': slide.position || 'center 30%',
           }}
         >
           <div className={styles.overlay} />

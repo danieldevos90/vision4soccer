@@ -1,0 +1,268 @@
+.bannerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: var(--spacing-md);
+  pointer-events: none;
+}
+
+.banner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--color-bg-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: 0 -4px 20px var(--color-overlay-light);
+  pointer-events: all;
+}
+
+.bannerContent {
+  padding: var(--spacing-lg);
+}
+
+.bannerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.bannerTitle {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  opacity: 0.6;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.bannerText {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  opacity: 0.8;
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.preferences {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 0;
+}
+
+.preferenceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.preferenceItem:last-child {
+  border-bottom: none;
+}
+
+.preferenceInfo {
+  flex: 1;
+  margin-right: var(--spacing-md);
+}
+
+.preferenceLabel {
+  display: block;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-dark);
+  cursor: pointer;
+}
+
+.preferenceDescription {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.preferenceToggle {
+  flex-shrink: 0;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.bannerActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-md);
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 16px;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+}
+
+.buttonPrimary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.buttonPrimary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.buttonPrimary:active {
+  transform: translateY(0);
+}
+
+.buttonSecondary {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-text-dark);
+}
+
+.buttonSecondary:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.buttonSecondary:active {
+  transform: translateY(0);
+}
+
+.bannerFooter {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.privacyLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-dark);
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.privacyLink:hover {
+  opacity: 0.8;
+}
+
+.preferencesButton {
+  position: fixed;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 9998;
+}
+
+.preferencesToggle {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: calc(0.5em + 2px) calc(1em + 2px);
+  background: var(--color-bg-light);
+  border: 2px solid var(--color-text-dark);
+  border-radius: 0;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  box-shadow: 0 2px 8px var(--color-overlay-light);
+  transition: all 0.3s ease;
+}
+
+.preferencesToggle:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.preferencesToggle:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    padding: var(--spacing-sm);
+  }
+
+  .bannerContent {
+    padding: var(--spacing-md);
+  }
+
+  .bannerTitle {
+    font-size: 20px;
+  }
+
+  .bannerActions {
+    flex-direction: column;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    width: 100%;
+  }
+
+  .preferenceItem {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .preferenceToggle {
+    align-self: flex-start;
+  }
+
+  .preferencesButton {
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+
+  .preferencesToggle {
+    font-size: 11px;
+    padding: calc(0.4em + 2px) calc(0.75em + 2px);
+  }
+}

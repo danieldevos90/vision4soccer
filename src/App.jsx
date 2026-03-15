@@ -6,6 +6,9 @@ import { Profile } from './components/pages/Profile/Profile';
 import { Youth } from './components/pages/Youth/Youth';
 import { Contact } from './components/pages/Contact/Contact';
 import { Articles } from './components/pages/Articles/Articles';
+import { CookieBanner } from './components/ui/CookieBanner';
+import { PageViewTracker } from './components/analytics';
+import { initializeGA4ConsentMode } from './utils/analytics';
 import './design-system/global.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -37,10 +40,17 @@ function AOSHandler() {
  * Vision4Soccer website - Component-based refactor with i18n and routing
  */
 function App() {
+  // Initialize GA4 Consent Mode (before any tracking)
+  useEffect(() => {
+    // Initialize consent mode with default denied state (GDPR compliant)
+    initializeGA4ConsentMode(false);
+  }, []);
+
   return (
     <BrowserRouter>
       <I18nProvider>
         <AOSHandler />
+        <PageViewTracker />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profiel" element={<Profile />} />
@@ -56,6 +66,7 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/" element={<Articles />} />
         </Routes>
+        <CookieBanner />
       </I18nProvider>
     </BrowserRouter>
   );

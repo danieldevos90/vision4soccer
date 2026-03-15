@@ -8,12 +8,6 @@
   background-color: #ffffff;
 }
 
-.mapContainer :global(svg) {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-}
-
 .fallbackMap {
   width: 100%;
   height: 100%;
@@ -47,6 +41,28 @@
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Custom marker - green circle matching previous Google Maps style */
+.customMarker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.markerCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #33A27B;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Leaflet map fills container */
+.leafletMap {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
